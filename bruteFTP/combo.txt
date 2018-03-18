@@ -1,0 +1,3 @@
+root:password
+admin:password
+user:password
