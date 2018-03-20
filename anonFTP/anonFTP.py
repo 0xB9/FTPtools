@@ -19,9 +19,12 @@ def anonFTP(hostname):
         print color.red+"\n[-] "+str(hostname)+" Anonymous Login Not Supported..."+color.end
         return False
 
+print color.green+"-"*60+color.end
 print color.blue+"anonFTP Login Scan"+color.end
 print color.blue+"Made By: 0xB9"+color.end
+print color.green+"-"*60+color.end
+print ""
 time.sleep(1)
 
-host = raw_input("Enter A Host-> ")
+host = raw_input(color.green+"Enter A Host-> "+color.end)
 anonFTP(host)
