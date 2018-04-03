@@ -1,30 +1,25 @@
 #!/usr/bin/python
 import ftplib
 import time
-
-class color:
-    blue = '\033[94m'
-    green = '\033[92m'
-    red = '\033[91m'
-    end = '\033[0m'
+from huepy import *
 
 def anonFTP(hostname):
     try:
         ftp = ftplib.FTP(hostname)
         ftp.login('anonymous', 'anon@anon.com')
-        print color.green+"\n[+] "+str(hostname)+" Anonymous Login Access!"+color.end
+        print good(green(str(hostname)+" Anonymous Login Access!"))
         ftp.quit()
         return True
     except Exception, e:
-        print color.red+"\n[-] "+str(hostname)+" Anonymous Login Not Supported..."+color.end
+        print bad(red(str(hostname)+" Anonymous Login Not Supported..."))
         return False
 
-print color.green+"-"*60+color.end
-print color.blue+"anonFTP Login Scan"+color.end
-print color.blue+"Made By: 0xB9"+color.end
-print color.green+"-"*60+color.end
+print green("-"*60)
+print lightcyan("anonFTP Login Scan")
+print lightcyan("Made By: "+italic("0xB9"))
+print green("-"*60)
 print ""
 time.sleep(1)
 
-host = raw_input(color.green+"Enter A Host-> "+color.end)
+host = raw_input(green("Enter A Host-> "))
 anonFTP(host)
